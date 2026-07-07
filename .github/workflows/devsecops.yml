@@ -1,0 +1,14 @@
+# All CI will execute from here using workflow_call
+
+name: DevSecOps
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    
+    code-quality:
+        uses: ./.github/workflows/code-quality.yml
+        
