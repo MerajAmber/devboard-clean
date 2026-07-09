@@ -1,4 +1,4 @@
-FROM dhi.io/golang:1-alpine AS builder
+FROM golang:tip-alpine3.24 AS builder
 
 WORKDIR /app
 
@@ -8,17 +8,14 @@ RUN go mod download
 COPY . .
 RUN CGO_ENABLED=0 go build -o devboard-backend .
 
-FROM dhi.io/golang:1-alpine
+FROM golang:tip-alpine3.24
 
 WORKDIR /app
 
 COPY --from=builder /app/devboard-backend ./devboard-backend
 
 # Ensure binary is executable
-RUN chmod +x ./devboard-backend
-
-# DHI image runs as nonroot by default
-USER nonroot
+# RUN chmod +x ./devboard-backend
 
 EXPOSE 8080
 
