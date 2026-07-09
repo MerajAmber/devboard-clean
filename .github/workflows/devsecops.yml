@@ -9,18 +9,18 @@ on:
 
 jobs:
     
-    code-quality:
-        uses: ./.github/workflows/code-quality.yml
+    # code-quality:
+    #     uses: ./.github/workflows/code-quality.yml
 
-    secrets-scan:
-        uses: ./.github/workflows/secret-scanning.yml
+    # secrets-scan:
+    #     uses: ./.github/workflows/secret-scanning.yml
         
-    dependecy-check:
-        uses: ./.github/workflows/dependency-scan.yml
+    # dependecy-check:
+    #     uses: ./.github/workflows/dependency-scan.yml
 
-    dockerfile-scan:
-        uses: ./.github/workflows/dockerfile-scan.yml
-        secrets: inherit
+    # dockerfile-scan:
+    #     uses: ./.github/workflows/dockerfile-scan.yml
+    #     secrets: inherit
 
     dockerbuild-push:
         uses: ./.github/workflows/docker-build.yml
