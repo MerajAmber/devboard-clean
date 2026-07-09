@@ -21,3 +21,7 @@ jobs:
     dockerfile-scan:
         uses: ./.github/workflows/dockerfile-scan.yml
         secrets: inherit
+
+    dockerbuild-push:
+        uses: ./.github/workflows/docker-build.yml
+        secrets: inherit
